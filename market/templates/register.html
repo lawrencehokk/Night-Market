@@ -1,0 +1,43 @@
+{% extends 'base.html'  %}
+
+{% block title %}
+    Register Page
+{% endblock %}
+
+{% block content %}
+<body class="text-center">
+    <div class="container">
+        <form method="POST" CLASS="form-register" style="color:white">
+            {{ form.hidden_tag() }}
+            <img class="mb=4" src="https://www.asiamiles.com/content/dam/am-content/brand-v2/professional-pillar/logo-image/Vertical%20Wordmark_Preface%20Coding.png/jcr:content/renditions/cq5dam.resize.390.234.png">
+
+            <h1 class="h3 mb-3 font-weight-normal">
+                Please Create your Preface Account
+            </h1>
+            <br>
+
+            {{form.username.label() }}
+            {{form.username(class='form-control', placeholder="User Name") }}
+
+            {{form.email_addres.label()}}
+            {{form.email_addres(class='form-control', placeholder="User Email")}}
+
+            {{form.password1.label()}}
+            {{form.password1(class='form-control', placeholder="Password")}}
+
+            {{form.password2.label()}}
+            {{form.password2(class='form-control', placeholder="Password Confirm")}}
+
+            <br>
+
+            <div class="checkbox mb-3">
+                <h6> Already have an account</h6>
+                <a class="btn btn-sm btn-secondary" href="{{url_for('login_page')}}"> Register</a>
+            </div>
+            {{form.submit(class="btn btn-lg btn-block btn-primary") }}
+
+        </form>
+    </div>
+
+</body>
+{% endblock %}
